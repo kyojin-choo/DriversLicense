@@ -37,12 +37,12 @@ CREATE TABLE License (
 
 CREATE VIEW [IF NOT EXISTS] PublicLicense(UID, Picture, FirstName, State, DOB) AS 
 	Select Picture, FirstName, State, DOB 
-	FROM License;
+	FROM License
+	WHERE UID = "[insert whatever uid you need to access]";
 	
 /*to select from the veiw:
 */
-SELECT * FROM PublicLicense
-	WHERE UID = "[insert whatever uid you need to access]";
+SELECT * FROM PublicLicense;
 
 CREATE TABLE PublicLicense (
 	Picture VARCHAR(50) NOT NULL,
