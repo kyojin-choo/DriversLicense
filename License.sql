@@ -35,6 +35,15 @@ CREATE TABLE License (
 	PRIMARY KEY (UID, DriverID)
 ) DEFAULT CHARSET=utf8;
 
+CREATE VIEW [IF NOT EXISTS] PublicLicense(UID, Picture, FirstName, State, DOB) AS 
+	Select Picture, FirstName, State, DOB 
+	FROM License;
+	
+/*to select from the veiw:
+*/
+SELECT * FROM PublicLicense
+	WHERE UID = "[insert whatever uid you need to access]";
+
 CREATE TABLE PublicLicense (
 	Picture VARCHAR(50) NOT NULL,
 	FirstName VARCHAR(20) NOT NULL,
