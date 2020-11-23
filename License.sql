@@ -35,10 +35,10 @@ CREATE TABLE License (
 	PRIMARY KEY (UID, DriverID)
 ) DEFAULT CHARSET=utf8;
 
-CREATE VIEW [IF NOT EXISTS] PublicLicense(UID, Picture, FirstName, State, DOB) AS 
+/*CREATE VIEW IF NOT EXISTS PublicLicense(UID, Picture, FirstName, State, DOB) AS 
 	Select Picture, FirstName, State, DOB 
 	FROM License
-	WHERE UID = "[insert whatever uid you need to access]";
+	WHERE UID = "[insert whatever uid you need to access]";*/
 	
 /*to select from the veiw:
 */
@@ -50,9 +50,9 @@ CREATE TABLE PublicLicense (
 	State VARCHAR(20) NOT NULL,
 	DOB DATE NOT NULL,
 
-	FOREIGN KEY (Picture) REFERENCES License(Picture)
-	FOREIGN KEY (FirstName) REFERENCES License(FirstName)
-	FOREIGN KEY (State) REFERENCES License(State)
+	FOREIGN KEY (Picture) REFERENCES License(Picture),
+	FOREIGN KEY (FirstName) REFERENCES License(FirstName),
+	FOREIGN KEY (State) REFERENCES License(State),
 	FOREIGN KEY (DOB) REFERENCES License(DOB)
 
 ) DEFAULT CHARSET=utf8;
@@ -81,10 +81,9 @@ VALUES
 	 date('1996-12-03'), date('2018-11-21'), date('2022-09-25'), "C", "B", NULL, TRUE, "M", "5'10", 200),
 	 
 	 ("2a35awfasf", "pictures/", "X-412-655-455", "Heidi ", "Preston", "1651 Edgewood Road", "Prim", "AR", 72130,
-	 date('1992-03-10'), date('2018-11-14'), date('2022-01-10'), "C", "B", NULL, TRUE, "M", "5'8", 152),
+	 date('1992-03-10'), date('2018-11-14'), date('2022-01-10'), "C", "B", NULL, TRUE, "M", "5'8", 123),
 	 
 	 ("2412fsdaf4sfds", "pictures/", "A-047-455-108", "Sheena ", "Masuda", "4219 Sand Fork Road", "South Bend", "IN", 46625,
-	 date('1994-07-09'), date('2019-04-28'), date('2023-01-07'), "C", "B", NULL, TRUE, "M", "5'6", 152),
-	 
-	 ("asf93jkfaj", "pictures/fakeperson.jpg", "H-123-456-789", "Daniel", "Choo", "1234 Hi Road", "Baltimore", "MD", 21250,
-	 date('1997-02-14'), date('2020-11-21'), date('2024-11-21'), "C", "B", NULL, TRUE, "M", "5'10", 120)
+	 date('1994-07-09'), date('2019-04-28'), date('2023-01-07'), "C", "B", NULL, TRUE, "M", "5'6", 100);
+     
+SELECT * FROM License;
