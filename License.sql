@@ -8,56 +8,34 @@
 --              picture, drivers id, first/last name, address, et cetera of the driver can
 --              be accessed due to a unique identifier.
 
+DROP TABLE IF EXISTS License;
 #CREATE DATABASE DriversLicense;
 USE DriversLicense;
 
 CREATE TABLE License (
-	UID VARCHAR(50) NOT NULL,
-	Picture VARCHAR(50) NOT NULL,
-	DriverID VARCHAR(17) NOT NULL,
-	FirstName VARCHAR(20) NOT NULL,
-	LastName VARCHAR(20) NOT NULL,
-	Address VARCHAR(50) NOT NULL,
-	City VARCHAR(50) NOT NULL,
-	State VARCHAR(20) NOT NULL,
-	ZipCode MEDIUMINT NOT NULL,
-	DOB DATE NOT NULL,
-	IssueDate DATE NOT NULL,
-	ExpireDate DATE NOT NULL,
-	Restriction VARCHAR(1) NOT NULL,
-	Classification VARCHAR(1) NOT NULL,
-	Endorsement VARCHAR(1),
-	OrganDonor BOOLEAN NOT NULL,
-	Sex VARCHAR(1) NOT NULL,
-	Height VARCHAR(6) NOT NULL,
-	Weight SMALLINT NOT NULL,
+	uid VARCHAR(50) NOT NULL,
+	picture VARCHAR(50) NOT NULL,
+	driver_id VARCHAR(17) NOT NULL,
+	first_name VARCHAR(20) NOT NULL,
+	last_name VARCHAR(20) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	city VARCHAR(50) NOT NULL,
+	state VARCHAR(20) NOT NULL,
+	zip_code MEDIUMINT NOT NULL,
+	dob DATE NOT NULL,
+	issue_date DATE NOT NULL,
+	expire_date DATE NOT NULL,
+	restriction VARCHAR(1) NOT NULL,
+	classification VARCHAR(1) NOT NULL,
+	endorsement VARCHAR(1),
+	organ_donor BOOLEAN NOT NULL,
+	sex VARCHAR(1) NOT NULL,
+	height VARCHAR(6) NOT NULL,
+	weight SMALLINT NOT NULL,
 	
-	PRIMARY KEY (UID, DriverID)
+	PRIMARY KEY (uid, driver_id)
 ) DEFAULT CHARSET=utf8;
 
-/*CREATE VIEW IF NOT EXISTS PublicLicense(UID, Picture, FirstName, State, DOB) AS 
-	Select Picture, FirstName, State, DOB 
-	FROM License
-	WHERE UID = "[insert whatever uid you need to access]";*/
-	
-/*to select from the veiw:
-*/
-SELECT * FROM PublicLicense;
-
-CREATE TABLE PublicLicense (
-	Picture VARCHAR(50) NOT NULL,
-	FirstName VARCHAR(20) NOT NULL,
-	State VARCHAR(20) NOT NULL,
-	DOB DATE NOT NULL,
-
-	FOREIGN KEY (Picture) REFERENCES License(Picture),
-	FOREIGN KEY (FirstName) REFERENCES License(FirstName),
-	FOREIGN KEY (State) REFERENCES License(State),
-	FOREIGN KEY (DOB) REFERENCES License(DOB)
-
-) DEFAULT CHARSET=utf8;
-
-SELECT * FROM LICENSE;
 DESCRIBE LICENSE;
 
 /* Template for our license table.

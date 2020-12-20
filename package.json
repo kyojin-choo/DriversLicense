@@ -1,0 +1,27 @@
+{
+  "name": "tbd-491",
+  "version": "1.0.0",
+  "description": "Final project for 491",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyoogoo/TBD-491.git"
+  },
+  "author": "Daniel Choo, Ryan Hagedorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyoogoo/TBD-491/issues"
+  },
+  "homepage": "https://github.com/kyoogoo/TBD-491#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "querystring": "^0.2.0",
+    "typescript": "^4.1.2",
+    "url": "^0.11.0"
+  }
+}
