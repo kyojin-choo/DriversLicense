@@ -13,7 +13,6 @@ const url = require('url')
 const mysql = require('mysql')
 const express = require('express');
 const db = require('./db');
-const license = require('./license');
 
 // Initializing variables
 const app = express();
@@ -21,14 +20,6 @@ const port = 3000;
 const hostname = 'localhost';
 router = express.Router();
 con = db.connect()
-
-var pool = mysql.createPool({
-    host            : 'localhost',
-    user            : 'root',
-    password        : 'password',
-    database        : 'License',
-    connectionLimit : 0,
-});
 
 console.log("Connected to port " + port);
 

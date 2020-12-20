@@ -28,7 +28,7 @@ function connect() {
 				console.log("Connected to database.")
 		});
 
-		return db;
+		return db
 }
 
 // Export our retrieve function.
