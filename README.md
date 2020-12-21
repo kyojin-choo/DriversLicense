@@ -9,6 +9,7 @@ Final project for 491
 - MySQL
 
 ## Execute:
+- Execute the MySQL database in MySQLWorkbench
 - Run 'node main.js' in /src/
 - Type localhost:3000 in the URL to see all of the users in the database
 - Type localhost:3000/{uid} to see a specific individual in the database
